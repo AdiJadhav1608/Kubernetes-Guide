@@ -1,0 +1,48 @@
+# --------------------------------------------------
+# ReplicaSet Definition File
+# This YAML file creates a ReplicaSet to maintain
+# a fixed number of NGINX Pods
+# --------------------------------------------------
+
+# API version for ReplicaSet
+apiVersion: apps/v1
+
+# Type of Kubernetes object
+kind: ReplicaSet
+
+# Metadata for the ReplicaSet
+metadata:
+  # Name of the ReplicaSet
+  name: nginx-replicaset
+
+  # Labels for identification
+  labels:
+    app: nginx
+
+# Specification of the desired state
+spec:
+  # Number of Pod replicas to maintain
+  replicas: 3
+
+  # Selector to identify Pods managed by this ReplicaSet
+  selector:
+    matchLabels:
+      app: nginx
+
+  # Pod template used to create Pods
+  template:
+    metadata:
+      # Labels must match the selector
+      labels:
+        app: nginx
+    spec:
+      containers:
+        # Container name
+        - name: nginx-container
+
+          # Docker image used for the container
+          image: nginx:latest
+
+          # Port exposed by the container
+          ports:
+            - containerPort: 80
