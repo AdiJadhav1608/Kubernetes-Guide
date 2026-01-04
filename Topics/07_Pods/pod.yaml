@@ -1,0 +1,33 @@
+# --------------------------------------------------
+# Pod Definition File
+# This YAML file creates a simple NGINX Pod
+# --------------------------------------------------
+
+# API version used to create the Pod
+apiVersion: v1
+
+# Type of Kubernetes object
+kind: Pod
+
+# Metadata contains information about the Pod
+metadata:
+  # Name of the Pod
+  name: nginx-pod
+
+  # Labels help in identifying and grouping resources
+  labels:
+    app: nginx
+
+# Specification of the desired state of the Pod
+spec:
+  # List of containers inside the Pod
+  containers:
+    # Name of the container
+    - name: nginx-container
+
+      # Docker image used to create the container
+      image: nginx:latest
+
+      # Ports exposed by the container
+      ports:
+        - containerPort: 80
