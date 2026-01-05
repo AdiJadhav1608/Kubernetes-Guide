@@ -1,0 +1,48 @@
+# --------------------------------------------------
+# Deployment Definition File
+# This YAML file creates an NGINX Deployment
+# with rolling update capability
+# --------------------------------------------------
+
+# API version for Deployment
+apiVersion: apps/v1
+
+# Type of Kubernetes object
+kind: Deployment
+
+# Metadata for the Deployment
+metadata:
+  # Name of the Deployment
+  name: nginx-deployment
+
+  # Labels for identification
+  labels:
+    app: nginx
+
+# Specification of the desired state
+spec:
+  # Number of Pod replicas
+  replicas: 3
+
+  # Selector to identify Pods managed by this Deployment
+  selector:
+    matchLabels:
+      app: nginx
+
+  # Pod template used by the Deployment
+  template:
+    metadata:
+      # Labels must match the selector
+      labels:
+        app: nginx
+    spec:
+      containers:
+        # Container name
+        - name: nginx-container
+
+          # Docker image
+          image: nginx:latest
+
+          # Ports exposed by the container
+          ports:
+            - containerPort: 80
