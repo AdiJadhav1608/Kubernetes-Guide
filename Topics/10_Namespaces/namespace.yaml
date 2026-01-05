@@ -1,0 +1,15 @@
+# --------------------------------------------------
+# Namespace Definition File
+# This YAML file creates a custom Kubernetes Namespace
+# --------------------------------------------------
+
+# API version for Namespace
+apiVersion: v1
+
+# Type of Kubernetes object
+kind: Namespace
+
+# Metadata for the Namespace
+metadata:
+  # Name of the Namespace
+  name: dev-namespace
