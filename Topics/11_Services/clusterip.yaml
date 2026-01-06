@@ -1,0 +1,16 @@
+# --------------------------------------------------
+# ClusterIP Service Definition
+# Exposes Pods internally within the cluster
+# --------------------------------------------------
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-clusterip
+spec:
+  type: ClusterIP
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80
