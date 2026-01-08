@@ -1,0 +1,23 @@
+# ─────────────────────────────
+# 📄 ConfigMap Definition
+# ─────────────────────────────
+# This ConfigMap stores application configuration values
+# that can be injected into Pods as environment variables
+# or mounted as configuration files.
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  # Application environment
+  APP_ENV: "production"
+
+  # Application logging level
+  LOG_LEVEL: "info"
+
+  # Database host configuration
+  DB_HOST: "localhost"
+
+  # Database port configuration
+  DB_PORT: "5432"
