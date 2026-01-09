@@ -1,0 +1,15 @@
+# ─────────────────────────────
+# 📄 Persistent Volume Claim (PVC)
+# ─────────────────────────────
+# This PVC requests storage from the available PV.
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-demo
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
