@@ -1,0 +1,17 @@
+# ─────────────────────────────
+# 📄 Persistent Volume (PV)
+# ─────────────────────────────
+# This PV defines 1Gi of host-based storage
+# accessible by a single node.
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-demo
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data
