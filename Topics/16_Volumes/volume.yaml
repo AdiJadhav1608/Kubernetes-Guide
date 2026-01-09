@@ -1,0 +1,20 @@
+# ─────────────────────────────
+# 📄 Volume Example (emptyDir)
+# ─────────────────────────────
+# This Pod demonstrates usage of an emptyDir volume.
+# Data stored here exists as long as the Pod is running.
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-demo-pod
+spec:
+  containers:
+    - name: app-container
+      image: nginx
+      volumeMounts:
+        - name: shared-storage
+          mountPath: /usr/share/nginx/html
+  volumes:
+    - name: shared-storage
+      emptyDir: {}
