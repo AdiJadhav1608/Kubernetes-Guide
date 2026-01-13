@@ -1,0 +1,35 @@
+# ─────────────────────────────
+# 📄 StatefulSet Definition
+# ─────────────────────────────
+# This StatefulSet deploys a stateful application
+# with stable identity and persistent storage.
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: app-statefulset
+spec:
+  serviceName: "app-service"
+  replicas: 3
+  selector:
+    matchLabels:
+      app: stateful-app
+  template:
+    metadata:
+      labels:
+        app: stateful-app
+    spec:
+      containers:
+        - name: app-container
+          image: nginx
+          volumeMounts:
+            - name: data
+              mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi
