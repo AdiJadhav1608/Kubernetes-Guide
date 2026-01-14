@@ -1,0 +1,17 @@
+# ─────────────────────────────
+# 📄 Job Definition
+# ─────────────────────────────
+# This Job runs a one-time task and exits after completion.
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-demo
+spec:
+  template:
+    spec:
+      containers:
+        - name: job-container
+          image: busybox
+          command: ["sh", "-c", "echo Job Completed"]
+      restartPolicy: Never
