@@ -77,7 +77,7 @@ Next, you will learn about Kubernetes Troubleshooting.
 ---
 
 # 🤝 Contribute
-Add more commands, diagrams, or revision notes to help learners revise Docker faster.
+
 
 ---
 
