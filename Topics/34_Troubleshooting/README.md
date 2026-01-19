@@ -69,7 +69,7 @@ Next, you will learn about Real-World Kubernetes Projects.
 ---
 
 # 🤝 Contribute
-
+Add more commands, diagrams, or revision notes to help learners revise Docker faster.
 
 ---
 
