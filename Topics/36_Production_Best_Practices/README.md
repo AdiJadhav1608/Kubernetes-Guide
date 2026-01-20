@@ -72,7 +72,7 @@ Best practices reduce downtime and operational risks.
 ## 🧭 Final Note
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-You are now ready to work with Kubernetes in production environments.
+
 
 ---
 
