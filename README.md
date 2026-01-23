@@ -154,7 +154,7 @@ By completing this repo, you will be able to:
 ---
 
 # 🤝 Contribute
-Add more commands, diagrams, or revision notes to help learners revise Docker faster.
+
 
 ---
 
